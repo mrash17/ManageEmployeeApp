@@ -20,6 +20,8 @@ namespace ManageEmployeeApp.Data
                 var dob = faker.Date.Past(42, DateTime.Today.AddYears(-22)); // Age 22–64
                 var joinDate = faker.Date.Between(dob.AddYears(22), DateTime.Today.AddYears(-1));
                 var name = faker.Name.FullName();
+                var fromDate = faker.Date.Between(DateTime.Today.AddMonths(-2), DateTime.Today);
+                var toDate = fromDate.AddMonths(1); 
 
                 var emp = new Employee
                 {
@@ -37,7 +39,8 @@ namespace ManageEmployeeApp.Data
                 var title = faker.PickRandom(jobTitles);
                 emp.Salaries.Add(new EmployeeSalary
                 {
-                    FromDate = joinDate,
+                    FromDate = fromDate,
+                    ToDate = toDate,
                     Title = title,
                     Salary = faker.Random.Double(50000, 150000)
                 });

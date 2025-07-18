@@ -87,6 +87,7 @@ namespace ManageEmployeeApp.Services
                 Address = address!,
                 City = city!,
                 State = state!,
+                Zip = zip!,
                 Phone = phone,
                 JoinDate = DateTime.Today,
                 Salaries = new List<EmployeeSalary>

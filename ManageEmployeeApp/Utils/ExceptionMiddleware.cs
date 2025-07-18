@@ -18,7 +18,10 @@
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\n===== UNHANDLED EXCEPTION =====");
             Console.WriteLine($"Message    : {ex.Message}");
+            Console.WriteLine($"Source     : {ex.Source}");
+            Console.WriteLine($"StackTrace : {ex.StackTrace}");
             Console.ResetColor();
         }
+
     }
 }
